@@ -1,14 +1,15 @@
 {
-  "name": "react-scripts",
-  "version": "1.0.17",
+  "name": "advanced-react-scripts",
+  "version": "0.0.3",
+  "author": "artemir <artemir.q@gmail.com>",
   "description": "Configuration and scripts for Create React App.",
-  "repository": "facebookincubator/create-react-app",
+  "repository": "artemirq/create-react-app_advanced-react-scripts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/facebookincubator/create-react-app/issues"
+    "url": "https://github.com/artemirq/create-react-app_advanced-react-scripts/issues"
   },
   "files": [
     "bin",
@@ -57,7 +58,10 @@
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
     "webpack-manifest-plugin": "1.3.2",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "react-error-overlay": "^1.0.10"
   },
   "devDependencies": {
     "react": "^16.0.0",
