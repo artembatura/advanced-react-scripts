@@ -1,7 +1,6 @@
 {
   "name": "advanced-react-scripts",
   "version": "0.0.3",
-  "author": "artemir <artemir.q@gmail.com>",
   "description": "Configuration and scripts for Create React App.",
   "repository": "artemirq/create-react-app_advanced-react-scripts",
   "license": "MIT",
