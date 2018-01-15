@@ -60,7 +60,7 @@
     "whatwg-fetch": "2.0.3",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
-    "react-error-overlay": "^1.0.10"
+    "react-error-overlay": "^4.0.0"
   },
   "devDependencies": {
     "react": "^16.0.0",
