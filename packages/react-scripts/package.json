@@ -1,19 +1,14 @@
 {
-<<<<<<< HEAD
   "name": "advanced-react-scripts",
-  "version": "0.0.3",
-=======
-  "name": "react-scripts",
   "version": "1.1.0",
->>>>>>> d9799641268dfadffb625af68ce0a78895147728
   "description": "Configuration and scripts for Create React App.",
-  "repository": "artemirq/create-react-app_advanced-react-scripts",
+  "repository": "artemirq/advanced-react-scripts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/artemirq/create-react-app_advanced-react-scripts/issues"
+    "url": "https://github.com/artemirq/advanced-react-scripts/issues"
   },
   "files": [
     "bin",
