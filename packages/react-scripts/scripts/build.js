@@ -35,12 +35,12 @@ const fs = require('fs-extra');
 const webpack = require('webpack');
 const config = require('../config/webpack.config.prod');
 const paths = require('../config/paths');
-const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
-const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
-const printHostingInstructions = require('react-dev-utils/printHostingInstructions');
-const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
-const printBuildError = require('react-dev-utils/printBuildError');
-const { printBrowsers } = require('react-dev-utils/browsersHelper');
+const checkRequiredFiles = require('react-dev-utils-fresh/checkRequiredFiles');
+const formatWebpackMessages = require('react-dev-utils-fresh/formatWebpackMessages');
+const printHostingInstructions = require('react-dev-utils-fresh/printHostingInstructions');
+const FileSizeReporter = require('react-dev-utils-fresh/FileSizeReporter');
+const printBuildError = require('react-dev-utils-fresh/printBuildError');
+const { printBrowsers } = require('react-dev-utils-fresh/browsersHelper');
 
 const measureFileSizesBeforeBuild =
   FileSizeReporter.measureFileSizesBeforeBuild;
@@ -58,7 +58,7 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 
 // We require that you explictly set browsers and do not fall back to
 // browserslist defaults.
-const { checkBrowsers } = require('react-dev-utils/browsersHelper');
+const { checkBrowsers } = require('react-dev-utils-fresh/browsersHelper');
 checkBrowsers(paths.appPath)
   .then(() => {
     // First, read the current file sizes in build directory.

@@ -1,6 +1,6 @@
 {
-  "name": "eslint-config-react-app",
-  "version": "2.1.0",
+  "name": "eslint-config-react-app-fresh",
+  "version": "2.1.2",
   "description": "ESLint configuration used by Create React App",
   "repository": "facebookincubator/create-react-app",
   "license": "MIT",
@@ -19,6 +19,6 @@
     "eslint-plugin-react": "^7.1.0"
   },
   "dependencies": {
-    "confusing-browser-globals": "^1.0.0"
+    "confusing-browser-globals-fresh": "^1.0.0"
   }
 }

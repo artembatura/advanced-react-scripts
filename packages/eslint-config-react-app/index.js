@@ -21,7 +21,7 @@
 // This is dangerous as it hides accidentally undefined variables.
 // We blacklist the globals that we deem potentially confusing.
 // To use them, explicitly reference them, e.g. `window.name` or `window.status`.
-var restrictedGlobals = require('confusing-browser-globals');
+var restrictedGlobals = require('confusing-browser-globals-fresh');
 
 module.exports = {
   root: true,

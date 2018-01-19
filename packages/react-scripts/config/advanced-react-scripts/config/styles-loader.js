@@ -82,8 +82,10 @@ module.exports = (loader, test, exclude, modules) => isDev => {
         loader: ExtractTextPlugin.extract(
             Object.assign(
                 {
-                    fallback: require.resolve('style-loader'),
-                    options: { hmr: false },
+                    fallback: {
+                        loader: require.resolve('style-loader'),
+                        options: { hmr: false },
+                    },
                     use: loaders
                 },
                 extractTextPluginOptions

@@ -14,7 +14,7 @@ const svgLoader = isDev => {
                 options: {
                     // @remove-on-eject-begin
                     babelrc: false,
-                    presets: [require.resolve('babel-preset-react-app')],
+                    presets: [require.resolve('babel-preset-react-app-fresh')],
                     // @remove-on-eject-end
                     cacheDirectory: true,
                 }
