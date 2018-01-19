@@ -1,4 +1,4 @@
-# advanced-react-scripts 
+# :strawberry: advanced-react-scripts :strawberry:
 
 > :heavy_check_mark: Latest version of original react-scripts: **Alfa(2.0.0?) changes at 20.01.2018**
 
