@@ -17,7 +17,48 @@ process.on('unhandledRejection', err => {
 const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
+const execSync = require('child_process').execSync;
 const spawn = require('react-dev-utils/crossSpawn');
+const { defaultBrowsers } = require('react-dev-utils/browsersHelper');
+const os = require('os');
+
+function insideGitRepository() {
+  try {
+    execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' });
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function insideMercurialRepository() {
+  try {
+    execSync('hg --cwd . root', { stdio: 'ignore' });
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function gitInit() {
+  try {
+    execSync('git --version', { stdio: 'ignore' });
+
+    if (insideGitRepository() || insideMercurialRepository()) {
+      return false;
+    }
+
+    execSync('git init', { stdio: 'ignore' });
+    execSync('git add -A', { stdio: 'ignore' });
+    execSync('git commit -m "Initial commit from Create React App"', {
+      stdio: 'ignore',
+    });
+
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 
 module.exports = function(
   appPath,
@@ -43,9 +84,11 @@ module.exports = function(
     eject: 'react-scripts eject',
   };
 
+  appPackage.browserslist = defaultBrowsers;
+
   fs.writeFileSync(
     path.join(appPath, 'package.json'),
-    JSON.stringify(appPackage, null, 2)
+    JSON.stringify(appPackage, null, 2) + os.EOL
   );
 
   const readmeExists = fs.existsSync(path.join(appPath, 'README.md'));
@@ -128,6 +171,10 @@ module.exports = function(
       console.error(`\`${command} ${args.join(' ')}\` failed`);
       return;
     }
+  }
+
+  if (gitInit()) {
+    console.log('Initialized git repository');
   }
 
   // Display the most elegant way to cd.

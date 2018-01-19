@@ -14,8 +14,21 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
-
 const autoprefixer = require('autoprefixer');
+
+const postCSSLoaderOptions =
+    // Necessary for external CSS imports to work
+    // https://github.com/facebookincubator/create-react-app/issues/2677
+    Object.assign(
+        { sourceMap: shouldUseSourceMap },
+        { ident: 'postcss' },
+        { plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            autoprefixer({
+                flexbox: 'no-2009',
+            }),
+        ] }
+    );
 
 module.exports = (loader, test, exclude, modules) => isDev => {
     let loaders = isDev
@@ -34,7 +47,7 @@ module.exports = (loader, test, exclude, modules) => isDev => {
                 { importLoaders: 1 },
                 modules === true
                     ? {
-                        localIdentName: '[local]__[name]__[hash:8]',
+                        localIdentName: '[path]__[name]___[local]',
                         modules: true,
                     }
                     : {}
@@ -42,22 +55,7 @@ module.exports = (loader, test, exclude, modules) => isDev => {
         },
         {
             loader: require.resolve('postcss-loader'),
-            options: Object.assign(
-                { sourceMap: shouldUseSourceMap },
-                { plugins: () => [
-                        require('postcss-flexbugs-fixes'),
-                        autoprefixer({
-                            browsers: [
-                                '>1%',
-                                'last 4 versions',
-                                'Firefox ESR',
-                                'not ie < 11',
-                            ],
-                            flexbox: 'no-2009',
-                        }),
-                    ]
-                }
-            ),
+            options: postCSSLoaderOptions
         },
     ]);
 
@@ -85,7 +83,8 @@ module.exports = (loader, test, exclude, modules) => isDev => {
             Object.assign(
                 {
                     fallback: require.resolve('style-loader'),
-                    use: loaders,
+                    options: { hmr: false },
+                    use: loaders
                 },
                 extractTextPluginOptions
             )
