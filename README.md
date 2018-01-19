@@ -44,7 +44,7 @@ Note: to use modules the file must be named in the following format: ```[name].m
 
 For example ```styles.module.css``` or ```header.module.sass``` or ```footer.module.less```, etc. Files that are not prefixed with module will be parsed normally
 
-:mag_right: ### How does it work?
+### :mag_right: How does it work?
 
 The CRA team recently [added support](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env) for an ```.env``` file in the root of the generated CRA project
 
