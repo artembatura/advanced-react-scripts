@@ -1,24 +1,26 @@
 # advanced-react-scripts 
 
-Latest version of original react-scripts: Alfa(2.0.0?) changes at 20.01.2018**
+> :heavy_check_mark: Latest version of original react-scripts: **Alfa(2.0.0?) changes at 20.01.2018**
+
+---
 
 ### Credits
 
 #### The idea was taken from https://github.com/kitze/custom-react-scripts. Code based too on this repository. Thank you, @kitze
 
-### Disclaimer:
+### ⚠️ Disclaimer:
 > This is **not** a fork of ```create-react-app```. It's just a fork of ```react-scripts``` with simple webpack modifications that can toggle extra features
 
 The reason for this fork's existence is explained better in [this Medium article](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a)
 
-### Features:
+### 💡 Features:
 * Sass
 * CSS modules
 * Sass modules
 
 **At default all features disabled and can be turned individually*
 
-### How to use it
+### ❔ How to use it
 
 If you have existing project, run command:
 
@@ -30,7 +32,7 @@ Next
 
 Create `.env` file in the root of project and add any of the configuration options below to enable that feature
 
-### Configuration options
+### 📝 Configuration options
 
 #### Styling
 
@@ -42,7 +44,7 @@ Note: to use modules the file must be named in the following format: ```[name].m
 
 For example ```styles.module.css``` or ```header.module.sass``` or ```footer.module.less```, etc. Files that are not prefixed with module will be parsed normally
 
-### How does it work?
+:mag_right: ### How does it work?
 
 The CRA team recently [added support](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env) for an ```.env``` file in the root of the generated CRA project
 
