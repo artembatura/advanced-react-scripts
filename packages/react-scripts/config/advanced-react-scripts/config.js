@@ -9,7 +9,7 @@ module.exports = (env, isDev) => {
         return mapObject(
             group,
             (customizer, key) => {
-                const envValue = process.env['REACT_' + key];
+                const envValue = process.env['REACT_APP_' + key];
                 const activeEnvValue = env && envValue && envValue !== 'false';
                 return (activeEnvValue || customizer.default) && customizer.get(isDev);
             },
