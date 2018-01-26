@@ -21,6 +21,10 @@ const ModuleScopePlugin = require('react-dev-utils-fresh/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
+// PurgeCSS dependencies
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob-all');
+
 // #advanced-react-scripts
 const getAdvancedConfiguration = require('./advanced-react-scripts/config');
 
@@ -289,8 +293,18 @@ module.exports = {
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
-      filename: cssFilename,
+        filename: cssFilename,
     }),
+    // Remove unused css with Purgecss, if it enabled in .env file
+    // More information about PurgeCSS: https://github.com/FullHuman/purgecss
+    // Specify the path of the html files and source files
+    ...Array.from(
+        process.env['REACT_APP_PURGECSS'] ? [
+            new PurgecssPlugin({
+              paths: [paths.appHtml, ...glob.sync(`${paths.appSrc}/*.js`)]
+            })
+        ] : []
+    ),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
