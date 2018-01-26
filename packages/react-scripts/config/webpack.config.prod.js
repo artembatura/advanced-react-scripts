@@ -83,15 +83,15 @@ module.exports = {
     // This allows you to set a fallback for where Webpack should look for modules.
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
-    // https://github.com/facebookincubator/create-react-app/issues/253
-    modules: ['node_modules', paths.appNodeModules].concat(
+    // https://github.com/facebook/create-react-app/issues/253
+    modules: ['node_modules'].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
-    // https://github.com/facebookincubator/create-react-app/issues/290
+    // https://github.com/facebook/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
@@ -269,7 +269,7 @@ module.exports = {
         compress: {
           warnings: false,
           // Disabled because of an issue with Uglify breaking seemingly valid code:
-          // https://github.com/facebookincubator/create-react-app/issues/2376
+          // https://github.com/facebook/create-react-app/issues/2376
           // Pending further investigation:
           // https://github.com/mishoo/UglifyJS2/issues/2011
           comparisons: false,
@@ -280,7 +280,7 @@ module.exports = {
         output: {
           comments: false,
           // Turned on because emoji and regex is not minified properly using default
-          // https://github.com/facebookincubator/create-react-app/issues/2488
+          // https://github.com/facebook/create-react-app/issues/2488
           ascii_only: true,
         },
       },
@@ -327,7 +327,7 @@ module.exports = {
         }
         if (message.indexOf('Skipping static resource') === 0) {
           // This message obscures real errors so we ignore it.
-          // https://github.com/facebookincubator/create-react-app/issues/2612
+          // https://github.com/facebook/create-react-app/issues/2612
           return;
         }
         console.log(message);
@@ -336,7 +336,7 @@ module.exports = {
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       // `navigateFallback` and `navigateFallbackWhitelist` are disabled by default; see
-      // https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#service-worker-considerations
+      // https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#service-worker-considerations
       // navigateFallback: publicUrl + '/index.html',
       // navigateFallbackWhitelist: [/^(?!\/__).*/],
     }),
