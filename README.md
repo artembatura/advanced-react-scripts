@@ -11,7 +11,7 @@ Old part of reasons for this fork's existence is explained better in [this Mediu
 
 ### 💡 Features:
 * [Sass](https://sass-lang.com)
-* [CSS modules] (https://github.com/gajus/react-css-modules#css-modules)
+* [CSS modules](https://github.com/gajus/react-css-modules#css-modules)
 * Sass modules
 * [Purge CSS](https://github.com/FullHuman/purgecss)
 
