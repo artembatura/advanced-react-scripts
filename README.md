@@ -10,10 +10,10 @@
 Old part of reasons for this fork's existence is explained better in [this Medium article](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a)
 
 ### 💡 Features:
-* Sass
-* CSS modules
+* [Sass](https://sass-lang.com)
+* [CSS modules] (https://github.com/gajus/react-css-modules#css-modules)
 * Sass modules
-* Purge CSS
+* [Purge CSS](https://github.com/FullHuman/purgecss)
 
 **At default all features disabled and can be turned individually*
 
