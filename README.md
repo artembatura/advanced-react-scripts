@@ -1,6 +1,8 @@
 # :strawberry: [advanced-react-scripts](https://www.npmjs.com/package/advanced-react-scripts) :strawberry:
 
-:heavy_check_mark: Latest version of original react-scripts: **Updated at `03.02.2018`**
+Latest version of original react-scripts: :heavy_check_mark:  **Updated at `03.02.2018`**
+
+---
 
 ### ⚠️ Disclaimer:
 > This is **not** a fork of ```create-react-app```. It's just a fork of ```react-scripts``` with simple webpack modifications that can toggle extra features
