@@ -134,12 +134,12 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              // @remove-on-eject-begin
               // TODO: consider separate config for production,
               // e.g. to enable no-console and no-debugger only in production.
               baseConfig: {
                 extends: [require.resolve('eslint-config-react-app-fresh')],
               },
+              // @remove-on-eject-begin
               ignore: false,
               useEslintrc: false,
               // @remove-on-eject-end
@@ -147,7 +147,8 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: paths.appSrc,
+        include: paths.srcPaths,
+        exclude: [/[/\\\\]node_modules[/\\\\]/],
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -168,7 +169,8 @@ module.exports = {
           // The preset includes JSX, Flow, and some ESnext features.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: paths.srcPaths,
+            exclude: [/[/\\\\]node_modules[/\\\\]/],
             use: [
               // This loader parallelizes code compilation, it is optional but
               // improves compile time on larger projects
@@ -178,8 +180,20 @@ module.exports = {
                 options: {
                   // @remove-on-eject-begin
                   babelrc: false,
-                  presets: [require.resolve('babel-preset-react-app-fresh')],
                   // @remove-on-eject-end
+                  presets: [require.resolve('babel-preset-react-app-fresh')],
+                  plugins: [
+                    [
+                      require.resolve('babel-plugin-named-asset-import'),
+                      {
+                        loaderMap: {
+                          svg: {
+                            ReactComponent: 'svgr/webpack![path]',
+                          },
+                        },
+                      },
+                    ],
+                  ],
                   compact: true,
                   highlightCode: true,
                 },
@@ -200,7 +214,9 @@ module.exports = {
                   babelrc: false,
                   compact: false,
                   presets: [
-                    require.resolve('babel-preset-react-app-fresh/dependencies'),
+                    require.resolve(
+                      'babel-preset-react-app-fresh/dependencies'
+                    ),
                   ],
                   cacheDirectory: true,
                   highlightCode: true,
@@ -293,17 +309,19 @@ module.exports = {
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
-        filename: cssFilename,
+      filename: cssFilename,
     }),
     // Remove unused css with Purgecss, if it enabled in .env file
     // More information about PurgeCSS: https://github.com/FullHuman/purgecss
     // Specify the path of the html files and source files
     ...Array.from(
-        process.env['REACT_APP_PURGECSS'] ? [
+      process.env['REACT_APP_PURGECSS']
+        ? [
             new PurgecssPlugin({
-              paths: [paths.appHtml, ...glob.sync(`${paths.appSrc}/*.js`)]
-            })
-        ] : []
+              paths: [paths.appHtml, ...glob.sync(`${paths.appSrc}/*.js`)],
+            }),
+          ]
+        : []
     ),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
