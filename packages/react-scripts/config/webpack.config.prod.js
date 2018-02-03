@@ -184,7 +184,7 @@ module.exports = {
                   presets: [require.resolve('babel-preset-react-app-fresh')],
                   plugins: [
                     [
-                      require.resolve('babel-plugin-named-asset-import'),
+                      require.resolve('babel-plugin-named-asset-import-fresh'),
                       {
                         loaderMap: {
                           svg: {
