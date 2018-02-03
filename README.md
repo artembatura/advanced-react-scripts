@@ -36,9 +36,9 @@ Then create `.env` file in the root of project for add any of the configuration 
 
 #### Styling
 
-- Enable SASS: ```REACT_APP_SASS=true```
-- Enable CSS Modules: ```REACT_APP_CSS_MODULES=true```
-- Enable SASS Modules: ```REACT_APP_SASS_MODULES=true```
+- ```REACT_APP_SASS=true``` enable SASS
+- ```REACT_APP_CSS_MODULES=true``` enable CSS Modules 
+- ```REACT_APP_SASS_MODULES=true``` enable SASS Modules
 
 Note: to use modules the file must be named in the following format: ```[name].module.[preprocessor_name]```
 
@@ -46,7 +46,7 @@ For example ```styles.module.css```/```header.module.sass```/```myStyles.module.
 
 #### Optimizers
 
-- Enable Purge CSS, which remove unused CSS: ```REACT_APP_PURGECSS=true```
+- ```REACT_APP_PURGECSS=true``` enable Purge CSS, which remove unused CSS
 
 ### :mag_right: How does it work?
 
