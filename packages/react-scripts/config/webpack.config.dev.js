@@ -182,7 +182,9 @@ module.exports = {
                   // @remove-on-eject-begin
                   babelrc: false,
                   // @remove-on-eject-end
-                  presets: [require.resolve('babel-preset-react-app-fresh')],
+                  presets: [
+                    require.resolve('babel-preset-react-app-fresh'),
+                  ].concat(advancedConfiguration.babelPresets),
                   plugins: [
                     [
                       require.resolve('babel-plugin-named-asset-import-fresh'),
@@ -287,6 +289,8 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    // #advanced-react-scripts
+    ...advancedConfiguration.babelPlugins,
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

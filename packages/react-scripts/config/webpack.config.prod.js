@@ -181,7 +181,9 @@ module.exports = {
                   // @remove-on-eject-begin
                   babelrc: false,
                   // @remove-on-eject-end
-                  presets: [require.resolve('babel-preset-react-app-fresh')],
+                  presets: [
+                    require.resolve('babel-preset-react-app-fresh'),
+                  ].concat(advancedConfiguration.babelPresets),
                   plugins: [
                     [
                       require.resolve('babel-plugin-named-asset-import-fresh'),

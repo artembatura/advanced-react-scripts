@@ -6,6 +6,11 @@ const customizers = {
       get: () => require.resolve('babel-preset-stage-0'),
     },
   },
+  babelPlugins: {
+    PROPOSAL_DECORATORS: {
+      get: () => require.resolve('@babel/plugin-proposal-decorators'),
+    },
+  },
   webpackLoaders: require('./customizers/webpack-loaders'),
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "advanced-react-scripts",
-  "version": "0.3.44-beta.0",
+  "version": "0.3.44-beta.5",
   "description": "CRA & great features without ejecting",
   "repository": "artemirq/advanced-react-scripts",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "babel-loader": "8.0.0-beta.0",
     "babel-preset-react-app-fresh": "^3.1.2",
     "babel-preset-stage-0": "7.0.0-beta.3",
+    "@babel/plugin-proposal-decorators": "7.0.0-beta.39",
     "babel-plugin-named-asset-import-fresh": "^0.1.1",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "2.3.0",
