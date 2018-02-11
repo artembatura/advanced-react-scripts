@@ -1,8 +1,6 @@
-# :strawberry: [advanced-react-scripts](https://www.npmjs.com/package/advanced-react-scripts) :strawberry:
+# [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts) advanced-react-scripts :strawberry:
 
 :heavy_check_mark:  Updated from original branch at **03.02.2018**
-
-[![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
 ---
 
@@ -19,6 +17,7 @@ In compare with `custom-react-scripts`, `advanced-react-scripts` doesn't support
 * SASS modules
 * [Purge CSS](https://github.com/FullHuman/purgecss)
 * [babel-preset-stage-0](https://babeljs.io/docs/plugins/preset-stage-0/)
+* [proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
 
 **NOTE: At default all features disabled and can be turned individually*
 
@@ -50,7 +49,8 @@ For example ```styles.module.css```/```header.module.sass```/```myStyles.module.
 
 #### Babel
 
-- `REACT_APP_BABEL_STAGE_0=true`  enable Stage-0 Babel Preset([Decorators support too](https://babeljs.io/docs/plugins/transform-decorators/))
+- `REACT_APP_BABEL_STAGE_0=true`  enable Stage-0 Babel Preset([decorators too?](https://babeljs.io/docs/plugins/transform-decorators/))
+- `REACT_APP_PROPOSAL_DECORATORS=true` enable Compile class and object decorators to ES5
 
 #### Optimizers
 
