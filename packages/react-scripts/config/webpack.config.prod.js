@@ -195,6 +195,8 @@ module.exports = {
                         },
                       },
                     ],
+                    // #advanced-react-scripts
+                    ...advancedConfiguration.babelPlugins,
                   ],
                   compact: true,
                   highlightCode: true,
