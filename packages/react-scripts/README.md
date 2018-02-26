@@ -18,6 +18,7 @@ In compare with `custom-react-scripts`, `advanced-react-scripts` doesn't support
 * [Purge CSS](https://github.com/FullHuman/purgecss)
 * [babel-preset-stage-0](https://babeljs.io/docs/plugins/preset-stage-0/)
 * [proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
+* [proposal-class-properties](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-class-properties)
 
 *NOTE: At default all features disabled and can be turned individually*
 
@@ -51,6 +52,7 @@ For example `styles.module.css`/`header.module.sass`/`myStyles.module.scss` and 
 
 - `REACT_APP_BABEL_STAGE_0=true`  enable Stage-0 Babel Preset([decorators too?](https://babeljs.io/docs/plugins/transform-decorators/))
 - `REACT_APP_PROPOSAL_DECORATORS=true`  enable compile class and object decorators to ES5
+- `REACT_APP_PROPOSAL_CLASS_PROPERTIES=true` enable transform class properties
 
 #### Optimizers
 
