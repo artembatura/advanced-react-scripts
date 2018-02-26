@@ -1,6 +1,6 @@
 {
   "name": "react-dev-utils-fresh",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Webpack utilities used by Create React App",
   "repository": "facebook/create-react-app",
   "license": "MIT",
@@ -37,10 +37,10 @@
     "webpackHotDevClient.js"
   ],
   "dependencies": {
-    "@babel/code-frame": "7.0.0-beta.39",
+    "@babel/code-frame": "7.0.0-beta.40",
     "address": "1.0.3",
-    "browserslist": "2.11.3",
-    "chalk": "2.3.0",
+    "browserslist": "3.1.1",
+    "chalk": "2.3.1",
     "cross-spawn": "6.0.4",
     "detect-port-alt": "1.1.5",
     "escape-string-regexp": "1.0.5",
@@ -52,14 +52,14 @@
     "opn": "5.2.0",
     "pkg-up": "2.0.0",
     "react-error-overlay": "^4.0.0",
-    "recursive-readdir": "2.2.1",
+    "recursive-readdir": "2.2.2",
     "shell-quote": "1.6.1",
     "sockjs-client": "1.1.4",
     "strip-ansi": "4.0.0",
     "text-table": "0.2.0"
   },
   "devDependencies": {
-    "jest": "22.2.2"
+    "jest": "22.4.2"
   },
   "scripts": {
     "test": "jest"

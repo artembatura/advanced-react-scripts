@@ -10,6 +10,12 @@ const customizers = {
     PROPOSAL_DECORATORS: {
       get: () => require.resolve('@babel/plugin-proposal-decorators'),
     },
+    PROPOSAL_CLASS_PROPERTIES: {
+      get: () => [
+        require.resolve('@babel/plugin-proposal-class-properties'),
+        { loose: true },
+      ],
+    },
   },
   webpackLoaders: require('./customizers/webpack-loaders'),
 };
