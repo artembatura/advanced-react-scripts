@@ -1,10 +1,6 @@
 # :strawberry: advanced-react-scripts [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
-:bomb: Latest added new feature: **26.02.2018**
-
-:wrench: Latest small fix: **26.02.2018**
-
-:exclamation: Latest critical fix: **[11.02.2018](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)**
+:bomb: Latest added new feature: **26.02.2018**   :wrench: Latest small fix: **26.02.2018**   :exclamation: Latest critical fix: **[11.02.2018](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)**
 
 :heavy_check_mark: Latest updated from original branch at **03.02.2018**
 
