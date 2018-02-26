@@ -1,26 +1,30 @@
 # :strawberry: advanced-react-scripts [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
-Updated from original branch at :heavy_check_mark: **03.02.2018**
+:bomb: Latest added new feature: **26.02.2018**
+
+:wrench: Latest small fix: **26.02.2018**
+
+:exclamation: Latest critical fix: **[11.02.2018](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)**
+
+:heavy_check_mark: Latest updated from original branch at **03.02.2018**
 
 ---
 
 ### ⚠️ Disclaimer
-> This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts` with simple webpack modifications that can toggle extra features
-
-Part of reasons for this fork's existence is explained better in [this Medium article](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a) by [@kitze](https://github.com/kitze), which create [custom-react-scripts](https://github.com/kitze/custom-react-scripts)
-
-In compare with `custom-react-scripts`, `advanced-react-scripts` doesn't support LESS and Stylus, but i try to support the latest version of react-scripts from original branch and add features, which will be useful for projects with React C:
+> This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts` with fresh dependency packages simple webpack modifications that can toggle extra features
 
 ### 💡 Features
 * [SASS](https://sass-lang.com)
-* [CSS modules](https://github.com/gajus/react-css-modules#css-modules)
-* SASS modules
+* [Stylus](http://stylus-lang.com/)
+* [CSS Modules](https://github.com/gajus/react-css-modules#css-modules)
+* SASS Modules
+* Stylus Modules
 * [Purge CSS](https://github.com/FullHuman/purgecss)
 * [babel-preset-stage-0](https://babeljs.io/docs/plugins/preset-stage-0/)
 * [proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
 * [proposal-class-properties](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-class-properties)
 
-*NOTE: At default all features disabled and can be turned individually*
+*NOTE: At default all features disabled and can be turn on individually*
 
 ### ❔ How to use it
 
@@ -28,11 +32,11 @@ In compare with `custom-react-scripts`, `advanced-react-scripts` doesn't support
 
    For it, run command:
 
-   `npm uninstall --save react-scripts`
+   `npm uninstall --save react-scripts` or `yarn uninstall react-scripts`
 
 2. Next we need install `advanced-react-scripts`:
 
-   `npm install --save-dev advanced-react-scripts`
+   `npm install --save-dev advanced-react-scripts` or `advanced-react-scripts`
 
 3. Then create `.env` file in the root of project for add any of the configuration options below to enable necessary feature
 
@@ -43,10 +47,12 @@ In compare with `custom-react-scripts`, `advanced-react-scripts` doesn't support
 - `REACT_APP_SASS=true`  enable SASS
 - `REACT_APP_CSS_MODULES=true`  enable CSS Modules 
 - `REACT_APP_SASS_MODULES=true`  enable SASS Modules
+- `REACT_APP_STYLUS=true`  enable Stylus
+- `REACT_APP_STYLUS_MODULES=true`  enable Stylus Modules
 
 *NOTE: to use modules the file must be named in the following format: `[name].module.[preprocessor_name]`*
 
-For example `styles.module.css`/`header.module.sass`/`myStyles.module.scss` and etc. Files that are not prefixed with module will be parsed normally
+For example `MyCssModule.module.css`/`MySassModule.module.sass`/`MyScssModule.module.scss`/`MyStylusModule.module.styl` and etc. Files that are not prefixed with module will be parsed normally
 
 #### Babel
 
@@ -62,12 +68,66 @@ For example `styles.module.css`/`header.module.sass`/`myStyles.module.scss` and 
 
 ### :mag_right: How does it work?
 
-The CRA team [added support](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env) for an `.env` file in the root of the generated CRA project
+The CRA team [added support](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env) for an `.env` file in the root of the generated CRA project and we can use it for customize webpack config
 
-From the original readme:
-> To define permanent environment variables, create a file called .env in the root of your project:
-> `REACT_APP_SECRET_CODE=abcdef`
+### Future
 
-### Credits
+We follow updates of original `react-scripts` and changes in used packages
 
-#### In general idea & code was taken from https://github.com/kitze/custom-react-scripts. Thank you, @kitze
+**We need help us, community! Also everyone can take part in the development and suggest the idea, explained in Issue or make your own changes and send in Pull Request**
+
+### Changelog
+
+#### 0.3.46-beta.0
+
+* `advanced-react-scripts`
+   * Add experimental [support Stylus and Stylus Modules](https://github.com/artemirq/advanced-react-scripts/issues/8)(not tested)
+
+#### 0.3.45-beta.3
+
+* [Commit](https://github.com/artemirq/advanced-react-scripts/commit/31bbcdced7dfa5489be6229d1609abae1c23955a)
+   * `advanced-react-scripts`
+      * [Support transform class properties](https://github.com/artemirq/advanced-react-scripts/issues/7)(add babel plugin `proposal-class-properties`)
+      * Updated dependencies
+      * Update template/.env
+   * `babel-plugin-named-asset-import-fresh`
+      * Updated dependencies
+   * `babel-preset-react-app-fresh`
+      * Now using `babel-plugin-dynamic-import-node-babel-7` instead of old `babel-plugin-transform-dynamic-import`(not tested)
+      * Updated dependencies
+   * `eslint-config-react-app-fresh`
+      * Updated dependencies
+   * `react-dev-utils-fresh`
+      * Updated dependencies
+   * `create-react-app-fresh`
+      * Updated dependencies
+   * `confusing-browser-globals`
+      * Updated dependencies
+
+#### 0.3.44-beta.3
+
+* `advanced-react-scripts`
+   * [Support ES6 Decorators](https://github.com/artemirq/advanced-react-scripts/issues/6)(add add babel plugin `proposal-decorators`) [Commit 1](https://github.com/artemirq/advanced-react-scripts/commit/fc5768083ef651f5cde08634d5bcb7e371e936b8), [Commit 2](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)
+
+#### 0.3.44-beta.0
+
+* [Commit](https://github.com/artemirq/advanced-react-scripts/commit/50e8acd2c0e427acd61b6390bf9d5644f383a7e3)
+   * `advanced-react-scripts`
+      * Add babel-preset-stage-0
+      * Updated dependencies
+      * Update template/.env
+   * `babel-plugin-named-asset-import-fresh`
+      * Updated dependencies
+   * `babel-preset-react-app-fresh`
+      * Updated dependencies
+   * `eslint-config-react-app-fresh`
+      * Updated dependencies
+   * `react-dev-utils-fresh`
+      * Updated dependencies
+   * `create-react-app-fresh`
+      * Updated dependencies
+
+
+#### Credits
+
+Inspired by [custom-react-scripts](https://github.com/kitze/custom-react-scripts)
