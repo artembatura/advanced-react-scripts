@@ -63,7 +63,7 @@
     "promise": "^8.0.1",
     "purgecss-webpack-plugin": "^0.20.0",
     "raf": "3.4.0",
-    "react-dev-utils-fresh": "^5.0.2",
+    "react-dev-utils-fresh": "^5.0.3",
     "react-error-overlay": "4.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.2",
