@@ -1,8 +1,8 @@
 # :strawberry: advanced-react-scripts [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
-:bomb: Latest added new feature: **26.02.2018**   :wrench: Latest small fix: **26.02.2018**   :exclamation: Latest critical fix: **[11.02.2018](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)**
+Latest added new feature :bomb: **26.02.2018** | Latest small fix :wrench: **26.02.2018** | Latest critical fix :exclamation: **[11.02.2018](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)**
 
-:heavy_check_mark: Latest updated from original branch at **03.02.2018**
+Latest updated from original branch at :heavy_check_mark: **03.02.2018**
 
 ---
 
@@ -24,7 +24,7 @@
 
 ### ❔ How to use it
 
-1. If you have existing project created by `create-react-app`, you can remove default `react-scripts`
+1. (optional) If you have existing project created by `create-react-app`, you can remove default `react-scripts`
 
    For it, run command:
 
@@ -36,25 +36,37 @@
 
 3. Then create `.env` file in the root of project for add any of the configuration options below to enable necessary feature
 
-### 📝 Configuration options
+### Webpack loaders
 
 #### Styling
 
 - `REACT_APP_SASS=true`  enable SASS
+- `REACT_APP_STYLUS=true`  enable Stylus
+
 - `REACT_APP_CSS_MODULES=true`  enable CSS Modules 
 - `REACT_APP_SASS_MODULES=true`  enable SASS Modules
-- `REACT_APP_STYLUS=true`  enable Stylus
 - `REACT_APP_STYLUS_MODULES=true`  enable Stylus Modules
 
 *NOTE: to use modules the file must be named in the following format: `[name].module.[preprocessor_name]`*
 
 For example `MyCssModule.module.css`/`MySassModule.module.sass`/`MyScssModule.module.scss`/`MyStylusModule.module.styl` and etc. Files that are not prefixed with module will be parsed normally
 
-#### Babel
+#### GraphQL
 
-- `REACT_APP_BABEL_STAGE_0=true`  enable Stage-0 Babel Preset([decorators too?](https://babeljs.io/docs/plugins/transform-decorators/))
+- `REACT_APP_GRAPHQL=true`  preprocesses GraphQL queries in .graphql files
+
+### Babel plugins
+
+#### Support latest ES features
+
 - `REACT_APP_PROPOSAL_DECORATORS=true`  enable compile class and object decorators to ES5
 - `REACT_APP_PROPOSAL_CLASS_PROPERTIES=true` enable transform class properties
+
+### Babel presets
+
+- `REACT_APP_BABEL_STAGE_0=true`  enable Stage-0 Babel Preset([decorators too?](https://babeljs.io/docs/plugins/transform-decorators/))
+
+### Webpack plugins
 
 #### Optimizers
 
@@ -74,18 +86,25 @@ We follow updates of original `react-scripts` and changes in used packages
 
 ### Changelog
 
-#### 0.3.46-beta.0
+#### 03.46-beta.1 (February 28, 2018)
 
+Merge [latest changes](https://github.com/artemirq/advanced-react-scripts/pull/10) from [original branch](https://github.com/facebook/create-react-app)
 * `advanced-react-scripts`
-   * Add experimental [support Stylus and Stylus Modules](https://github.com/artemirq/advanced-react-scripts/issues/8)(not tested)
+   * Add GraphQL [optional preprocessing](https://github.com/artemirq/advanced-react-scripts#graphql)
 
-#### 0.3.45-beta.3
+#### 0.3.46-beta.0 (February 26, 2018)
+
+* [Commit](https://github.com/artemirq/advanced-react-scripts/commit/9efb325547380f3e9152e31af7ae558d3a85a6ff)
+   * `advanced-react-scripts`
+      * Add experimental [support Stylus and Stylus Modules](https://github.com/artemirq/advanced-react-scripts/issues/8)(not tested)
+
+#### 0.3.45-beta.3 (February 26, 2018)
 
 * [Commit](https://github.com/artemirq/advanced-react-scripts/commit/31bbcdced7dfa5489be6229d1609abae1c23955a)
    * `advanced-react-scripts`
       * [Support transform class properties](https://github.com/artemirq/advanced-react-scripts/issues/7)(add babel plugin `proposal-class-properties`)
+      * Update template config(`template/.env`)
       * Updated dependencies
-      * Update template/.env
    * `babel-plugin-named-asset-import-fresh`
       * Updated dependencies
    * `babel-preset-react-app-fresh`
@@ -97,21 +116,21 @@ We follow updates of original `react-scripts` and changes in used packages
       * Updated dependencies
    * `create-react-app-fresh`
       * Updated dependencies
-   * `confusing-browser-globals`
+   * `confusing-browser-globals-fresh`
       * Updated dependencies
 
-#### 0.3.44-beta.3
+#### 0.3.44-beta.3 (February 11, 2018)
 
 * `advanced-react-scripts`
    * [Support ES6 Decorators](https://github.com/artemirq/advanced-react-scripts/issues/6)(add add babel plugin `proposal-decorators`) [Commit 1](https://github.com/artemirq/advanced-react-scripts/commit/fc5768083ef651f5cde08634d5bcb7e371e936b8), [Commit 2](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)
 
-#### 0.3.44-beta.0
+#### 0.3.44-beta.0 (February 10, 2018)
 
 * [Commit](https://github.com/artemirq/advanced-react-scripts/commit/50e8acd2c0e427acd61b6390bf9d5644f383a7e3)
    * `advanced-react-scripts`
       * Add babel-preset-stage-0
       * Updated dependencies
-      * Update template/.env
+      * Update template config(`template/.env`)
    * `babel-plugin-named-asset-import-fresh`
       * Updated dependencies
    * `babel-preset-react-app-fresh`
