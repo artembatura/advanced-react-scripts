@@ -1,6 +1,6 @@
 # :strawberry: advanced-react-scripts [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
-Latest added new feature :bomb: **26.02.2018** | Latest critical fix :exclamation: **[28.02.2018](#0346-beta2-february-28-2018)**
+Latest added new feature :bomb: **26.02.2018** | Latest critical fix :exclamation: **[#2 at 28.02.2018](#0346-beta3-february-28-2018)**
 
 Latest updated from original branch at :heavy_check_mark: **03.02.2018**
 
@@ -85,6 +85,11 @@ We follow updates of original `react-scripts` and changes in used packages
 **We need help us, community! Also everyone can take part in the development and suggest the idea, explained in Issue or make your own changes and send in Pull Request**
 
 ### Changelog
+
+#### 03.46-release.0 (February 28, 2018)
+
+[Critical fix #2](https://github.com/artemirq/advanced-react-scripts/commit/5bd57e2c6ea54c38e22e01dc5092a46d1c8376e5)
+
 
 #### 03.46-beta.2 (February 28, 2018)
 
