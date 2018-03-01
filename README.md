@@ -2,7 +2,7 @@
 
 Latest added new feature :bomb: **26.02.2018** | Latest critical fix :exclamation: **[#2 at 28.02.2018](#0346-beta3-february-28-2018)**
 
-Latest updated from original branch at :heavy_check_mark: **03.02.2018**
+Latest update from original branch at :heavy_check_mark: **28.02.2018**
 
 ---
 
