@@ -10,8 +10,21 @@
 
 const babelJest = require('babel-jest');
 
+const getClientEnvironment = require('../env');
+const getAdvancedConfiguration = require('../advanced-react-scripts/config');
+
+const publicUrl = '';
+const env = getClientEnvironment(publicUrl);
+const advancedConfiguration = getAdvancedConfiguration(env, true);
+
 module.exports = babelJest.createTransformer({
-  presets: [require.resolve('babel-preset-react-app-fresh')],
+  presets: [
+    require.resolve('babel-preset-react-app-fresh'),
+    ...advancedConfiguration.babelPresets,
+  ],
+  plugins: [
+    ...advancedConfiguration.babelPlugins,
+  ],
   // @remove-on-eject-begin
   babelrc: false,
   // @remove-on-eject-end
