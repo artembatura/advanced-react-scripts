@@ -1,6 +1,6 @@
 # :strawberry: advanced-react-scripts [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
-Latest added new feature :bomb: **26.02.2018** | Latest critical fix :exclamation: **[#2 at 28.02.2018](#0346-beta3-february-28-2018)**
+Latest added new feature :bomb: **26.02.2018** | Latest critical fix :exclamation: **[#2 at 03.03.2018](#0346-release1-march-3-2018)**
 
 Latest update from original branch at :heavy_check_mark: **28.02.2018**
 
@@ -86,10 +86,16 @@ We follow updates of original `react-scripts` and changes in used packages
 
 ### Changelog
 
+#### 03.46-release.1 (March 3, 2018)
+
+* `advanced-react-scripts`
+   * [Pull Request #12](https://github.com/artemirq/advanced-react-scripts/pull/12) Fix plugin-proposal-decorators regression
+   * [Pull Request #13](https://github.com/artemirq/advanced-react-scripts/pull/13) Provide babel config to jest
+   * Add GraphQL to `template/.env`
+
 #### 03.46-release.0 (February 28, 2018)
 
-[Critical fix #2](https://github.com/artemirq/advanced-react-scripts/commit/5bd57e2c6ea54c38e22e01dc5092a46d1c8376e5)
-
+[Critical fix](https://github.com/artemirq/advanced-react-scripts/commit/5bd57e2c6ea54c38e22e01dc5092a46d1c8376e5)
 
 #### 03.46-beta.2 (February 28, 2018)
 
@@ -105,13 +111,13 @@ Merge [latest changes](https://github.com/artemirq/advanced-react-scripts/pull/1
 
 * [Commit](https://github.com/artemirq/advanced-react-scripts/commit/9efb325547380f3e9152e31af7ae558d3a85a6ff)
    * `advanced-react-scripts`
-      * Add experimental [support Stylus and Stylus Modules](https://github.com/artemirq/advanced-react-scripts/issues/8)(not tested)
+      * [#8](https://github.com/artemirq/advanced-react-scripts/issues/8) Add experimental support Stylus and Stylus Modules(not tested)
 
 #### 0.3.45-beta.3 (February 26, 2018)
 
 * [Commit](https://github.com/artemirq/advanced-react-scripts/commit/31bbcdced7dfa5489be6229d1609abae1c23955a)
    * `advanced-react-scripts`
-      * [Support transform class properties](https://github.com/artemirq/advanced-react-scripts/issues/7)(add babel plugin `proposal-class-properties`)
+      * Support transform class properties(via babel plugin `proposal-class-properties`) Closes [Issue #7](https://github.com/artemirq/advanced-react-scripts/issues/7)
       * Update template config(`template/.env`)
       * Updated dependencies
    * `babel-plugin-named-asset-import-fresh`
