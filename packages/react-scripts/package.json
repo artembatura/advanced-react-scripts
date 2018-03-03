@@ -21,8 +21,8 @@
     "react-scripts": "./bin/react-scripts.js"
   },
   "dependencies": {
-    "@babel/core": "7.0.0-beta.40",
-    "@babel/runtime": "7.0.0-beta.40",
+    "@babel/core": "7.0.0-beta.36",
+    "@babel/runtime": "7.0.0-beta.36",
     "autoprefixer": "8.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.2",
@@ -30,8 +30,8 @@
     "babel-loader": "8.0.0-beta.0",
     "babel-preset-react-app-fresh": "3.1.4",
     "babel-preset-stage-0": "7.0.0-beta.3",
-    "@babel/plugin-proposal-decorators": "7.0.0-beta.40",
-    "@babel/plugin-proposal-class-properties":"7.0.0-beta.40",
+    "@babel/plugin-proposal-decorators": "7.0.0-beta.36",
+    "@babel/plugin-proposal-class-properties":"7.0.0-beta.36",
     "babel-plugin-named-asset-import-fresh": "0.1.2",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chalk": "2.3.1",
