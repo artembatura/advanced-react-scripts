@@ -1,3 +1,7 @@
+#### 03.47-release.1 (March 10, 2018)
+
+Fix Readme and re-upload...
+
 #### 03.47-release.0 (March 10, 2018)
 
 * Close [#14](https://github.com/artemirq/advanced-react-scripts/issues/14). Add possibility customize CSS Modules local indent name for production and development build
