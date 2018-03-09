@@ -1,6 +1,4 @@
-# :strawberry: advanced-react-scripts [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
-
----
+# [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts) advanced-react-scripts :strawberry:
 
 ### ⚠️ Disclaimer
 
