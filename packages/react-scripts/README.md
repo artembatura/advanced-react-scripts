@@ -86,7 +86,11 @@ We follow updates of original `react-scripts` and changes in used packages
 
 ### Changelog
 
-#### 03.46-release.2 (March 3, 2018)
+#### 03.46-release.3 (March 9, 2018)
+
+Downgrade dependencies versions all @babel packages from beta.40 to beta.36
+
+#### 03.46-release.2 (March 8, 2018)
 
 Downgrade dependencies versions all @babel packages from beta.40 to beta.36
 
