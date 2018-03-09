@@ -1,11 +1,7 @@
 const mapObject = require('./utils/map-object');
 
 const customizers = {
-  babelPresets: {
-    BABEL_STAGE_0: {
-      get: () => require.resolve('babel-preset-stage-0'),
-    },
-  },
+  webpackLoaders: require('./customizers/webpack-loaders'),
   babelPlugins: {
     PROPOSAL_DECORATORS: {
       get: () => require.resolve('@babel/plugin-proposal-decorators'),
@@ -16,8 +12,20 @@ const customizers = {
         { loose: true },
       ],
     },
+    NAMED_ASSET_IMPORT: {
+      default: true,
+      get: () => [
+        require.resolve('babel-plugin-named-asset-import-fresh'),
+        {
+          loaderMap: {
+            svg: {
+              ReactComponent: 'svgr/webpack![path]',
+            },
+          },
+        },
+      ],
+    },
   },
-  webpackLoaders: require('./customizers/webpack-loaders'),
 };
 
 module.exports = (env, isDev) => {

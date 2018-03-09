@@ -182,23 +182,8 @@ module.exports = {
                   // @remove-on-eject-begin
                   babelrc: false,
                   // @remove-on-eject-end
-                  presets: [
-                    require.resolve('babel-preset-react-app-fresh'),
-                  ].concat(advancedConfiguration.babelPresets),
-                  plugins: [
-                    [
-                      require.resolve('babel-plugin-named-asset-import-fresh'),
-                      {
-                        loaderMap: {
-                          svg: {
-                            ReactComponent: 'svgr/webpack![path]',
-                          },
-                        },
-                      },
-                    ],
-                    // #advanced-react-scripts
-                    ...advancedConfiguration.babelPlugins,
-                  ],
+                  presets: [require.resolve('babel-preset-react-app-fresh')],
+                  plugins: advancedConfiguration.babelPlugins,
                   // This is a feature of `babel-loader` for webpack (not Babel itself).
                   // It enables caching results in ./node_modules/.cache/babel-loader/
                   // directory for faster rebuilds.
@@ -232,10 +217,7 @@ module.exports = {
               },
             ],
           },
-
-          // #advanced-react-scripts
           ...advancedConfiguration.webpackLoaders,
-
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.

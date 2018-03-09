@@ -1,95 +1,99 @@
 const paths = require('../../paths');
-const publicPath = paths.servedPath;
-const shouldUseRelativeAssetPaths = publicPath === './';
-const cssFilename = 'static/css/[name].[contenthash:8].css';
-
-// ExtractTextPlugin expects the build output to be flat.
-// (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
-// However, our output is structured with css, js and media folders.
-// To have this structure working with relative paths, we have to use custom options.
-const extractTextPluginOptions = shouldUseRelativeAssetPaths
-    ? // Making sure that the publicPath goes back to to build folder.
-    { publicPath: Array(cssFilename.split('/').length).join('../') }
-    : {};
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 const autoprefixer = require('autoprefixer');
 
-const postCSSLoaderOptions =
-    // Necessary for external CSS imports to work
-    // https://github.com/facebookincubator/create-react-app/issues/2677
-    Object.assign(
-        { sourceMap: shouldUseSourceMap },
-        { ident: 'postcss' },
-        { plugins: () => [
-            require('postcss-flexbugs-fixes'),
-            autoprefixer({
-                flexbox: 'no-2009',
-            }),
-        ] }
-    );
+const publicPath = paths.servedPath;
+const shouldUseRelativeAssetPaths = publicPath === './';
+const cssFilename = 'static/css/[name].[contenthash:8].css';
+
+const devLocalIdentName =
+  process.env.REACT_APP_DEVELOPMENT_CSS_MODULES_IDENT_NAME ||
+  '[path]__[name]___[local]';
+const prodLocalIdentName =
+  process.env.REACT_APP_PRODUCTION_CSS_MODULES_IDENT_NAME ||
+  '[local]-[sha512:hash:base32]';
+
+const extractTextPluginOptions = shouldUseRelativeAssetPaths
+  ? { publicPath: Array(cssFilename.split('/').length).join('../') }
+  : {};
+
+const postCSSLoaderOptions = Object.assign(
+  {},
+  { sourceMap: shouldUseSourceMap },
+  { ident: 'postcss' },
+  {
+    plugins: () => [
+      require('postcss-flexbugs-fixes'),
+      autoprefixer({
+        flexbox: 'no-2009',
+      }),
+    ],
+  }
+);
 
 module.exports = (loader, test, exclude, modules) => isDev => {
-    let loaders = isDev
-        ? [
-            {
-                loader: require.resolve('style-loader'),
-            },
-        ]
-        : [];
-
-    loaders = loaders.concat([
+  let loaders = isDev
+    ? [
         {
-            loader: require.resolve('css-loader'),
-            options: Object.assign(
-                { minimize: !isDev, sourceMap: shouldUseSourceMap },
-                { importLoaders: 1 },
-                modules === true
-                    ? {
-                        localIdentName: '[path]__[name]___[local]',
-                        modules: true,
-                    }
-                    : {}
-            ),
+          loader: require.resolve('style-loader'),
         },
-        {
-            loader: require.resolve('postcss-loader'),
-            options: postCSSLoaderOptions
-        },
-    ]);
+      ]
+    : [];
 
-    if (loader) {
-        loaders.push({
-            loader,
-            options: {
-                sourceMap: shouldUseSourceMap,
-            },
-        });
-    }
+  loaders = loaders.concat([
+    {
+      loader: require.resolve('css-loader'),
+      options: Object.assign(
+        {},
+        { minimize: !isDev, sourceMap: shouldUseSourceMap },
+        { importLoaders: 1 },
+        modules === true
+          ? {
+              localIdentName: isDev ? devLocalIdentName : prodLocalIdentName,
+              modules: true,
+            }
+          : {}
+      ),
+    },
+    {
+      loader: require.resolve('postcss-loader'),
+      options: postCSSLoaderOptions,
+    },
+  ]);
 
-    if (isDev) {
-        return {
-            test,
-            exclude,
-            use: loaders,
-        };
-    }
+  if (loader) {
+    loaders.push({
+      loader,
+      options: {
+        sourceMap: shouldUseSourceMap,
+      },
+    });
+  }
 
+  if (isDev) {
     return {
-        test,
-        exclude,
-        loader: ExtractTextPlugin.extract(
-            Object.assign(
-                {
-                    fallback: {
-                        loader: require.resolve('style-loader'),
-                        options: { hmr: false },
-                    },
-                    use: loaders
-                },
-                extractTextPluginOptions
-            )
-        ),
+      test,
+      exclude,
+      use: loaders,
     };
+  }
+
+  return {
+    test,
+    exclude,
+    loader: ExtractTextPlugin.extract(
+      Object.assign(
+        {},
+        {
+          fallback: {
+            loader: require.resolve('style-loader'),
+            options: { hmr: false },
+          },
+          use: loaders,
+        },
+        extractTextPluginOptions
+      )
+    ),
+  };
 };

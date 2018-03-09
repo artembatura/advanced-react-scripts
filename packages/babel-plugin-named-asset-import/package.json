@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-named-asset-import-fresh",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Babel plugin for named asset imports in Create React App",
   "repository": "facebookincubator/create-react-app",
   "license": "MIT",
@@ -12,6 +12,6 @@
     "index.js"
   ],
   "peerDependencies": {
-    "@babel/core": "7.0.0-beta.36"
+    "@babel/core": "7.0.0-beta.40"
   }
 }

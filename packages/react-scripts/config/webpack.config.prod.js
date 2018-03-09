@@ -8,6 +8,8 @@
 // @remove-on-eject-end
 'use strict';
 
+console.log(process.env.REACT_APP_PURGECSS);
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -20,10 +22,6 @@ const eslintFormatter = require('react-dev-utils-fresh/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils-fresh/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
-
-// PurgeCSS dependencies
-const PurgecssPlugin = require('purgecss-webpack-plugin');
-const glob = require('glob-all');
 
 // #advanced-react-scripts
 const getAdvancedConfiguration = require('./advanced-react-scripts/config');
@@ -181,23 +179,8 @@ module.exports = {
                   // @remove-on-eject-begin
                   babelrc: false,
                   // @remove-on-eject-end
-                  presets: [
-                    require.resolve('babel-preset-react-app-fresh'),
-                  ].concat(advancedConfiguration.babelPresets),
-                  plugins: [
-                    [
-                      require.resolve('babel-plugin-named-asset-import-fresh'),
-                      {
-                        loaderMap: {
-                          svg: {
-                            ReactComponent: 'svgr/webpack![path]',
-                          },
-                        },
-                      },
-                    ],
-                    // #advanced-react-scripts
-                    ...advancedConfiguration.babelPlugins,
-                  ],
+                  presets: [require.resolve('babel-preset-react-app-fresh')],
+                  plugins: advancedConfiguration.babelPlugins,
                   compact: true,
                   highlightCode: true,
                 },
@@ -228,10 +211,7 @@ module.exports = {
               },
             ],
           },
-
-          // #advanced-react-scripts
           ...advancedConfiguration.webpackLoaders,
-
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules
@@ -315,18 +295,6 @@ module.exports = {
     new ExtractTextPlugin({
       filename: cssFilename,
     }),
-    // Remove unused css with Purgecss, if it enabled in .env file
-    // More information about PurgeCSS: https://github.com/FullHuman/purgecss
-    // Specify the path of the html files and source files
-    ...Array.from(
-      process.env['REACT_APP_PURGECSS']
-        ? [
-            new PurgecssPlugin({
-              paths: [paths.appHtml, ...glob.sync(`${paths.appSrc}/*.js`)],
-            }),
-          ]
-        : []
-    ),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
