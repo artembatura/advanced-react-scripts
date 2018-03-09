@@ -1,6 +1,6 @@
 # :strawberry: advanced-react-scripts [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
-Latest added new feature :bomb: **26.02.2018** | Latest critical fix :exclamation: **[#2 at 03.03.2018](#0346-release1-march-3-2018)**
+Latest added new feature :bomb: **26.02.2018** | Latest critical fix :exclamation: **[03.03.2018](#0346-release1-march-3-2018)**
 
 Latest update from original branch at :heavy_check_mark: **28.02.2018**
 
@@ -86,6 +86,10 @@ We follow updates of original `react-scripts` and changes in used packages
 
 ### Changelog
 
+#### 03.46-release.2 (March 3, 2018)
+
+Downgrade dependencies versions all @babel packages from beta.40 to beta.36
+
 #### 03.46-release.1 (March 3, 2018)
 
 * `advanced-react-scripts`
@@ -137,7 +141,7 @@ Merge [latest changes](https://github.com/artemirq/advanced-react-scripts/pull/1
 #### 0.3.44-beta.3 (February 11, 2018)
 
 * `advanced-react-scripts`
-   * [Support ES6 Decorators](https://github.com/artemirq/advanced-react-scripts/issues/6)(add add babel plugin `proposal-decorators`) [Commit 1](https://github.com/artemirq/advanced-react-scripts/commit/fc5768083ef651f5cde08634d5bcb7e371e936b8), [Commit 2](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)
+   * [Support ES6 Decorators](https://github.com/artemirq/advanced-react-scripts/issues/6)(add babel plugin `proposal-decorators`) [Commit 1](https://github.com/artemirq/advanced-react-scripts/commit/fc5768083ef651f5cde08634d5bcb7e371e936b8), [Commit 2](https://github.com/artemirq/advanced-react-scripts/commit/4340ed750684011de81f9631abeb5237c3a7cee3)
 
 #### 0.3.44-beta.0 (February 10, 2018)
 
