@@ -3,14 +3,14 @@ const mapObject = require('./utils/map-object');
 const customizers = {
   webpackLoaders: require('./customizers/webpack-loaders'),
   babelPlugins: {
-    PROPOSAL_DECORATORS: {
-      get: () => require.resolve('@babel/plugin-proposal-decorators'),
-    },
     PROPOSAL_CLASS_PROPERTIES: {
       get: () => [
         require.resolve('@babel/plugin-proposal-class-properties'),
         { loose: true },
       ],
+    },
+    PROPOSAL_DECORATORS: {
+      get: () => require.resolve('@babel/plugin-proposal-decorators'),
     },
     NAMED_ASSET_IMPORT: {
       default: true,
