@@ -1,21 +1,20 @@
-# [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts) advanced-react-scripts :strawberry:
+# [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts) advanced-react-scripts 🍓
 
-### ⚠️ Disclaimer
+### ⚠ Disclaimer
 
-> This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts` with fresh dependency packages simple webpack modifications that can toggle extra features
+> This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts` with fresh dependency packages and simple webpack modifications that can toggle extra features
 
 ### 💡 Features
 
 * [SASS](https://sass-lang.com)
-* [Stylus](http://stylus-lang.com/)
+* [Stylus](http://stylus-lang.com)
 * [CSS Modules](https://github.com/gajus/react-css-modules#css-modules)
 * SASS Modules
 * Stylus Modules
 * Custom CSS Modules local ident name
 * [proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
 * [proposal-class-properties](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-class-properties)
-
-*NOTE: At default all features disabled and can be turn on individually*
+* [@babel/preset-stage-0](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0)
 
 ### ❔ How to use it
 
@@ -27,39 +26,56 @@
 
 2. Next we need install `advanced-react-scripts`:
 
-   `npm install --save-dev advanced-react-scripts` or `advanced-react-scripts`
+   `npm install --save-dev advanced-react-scripts` or `yarn add advanced-react-scripts`
 
 3. Then create `.env` file in the root of project for add any of the configuration options below to enable necessary feature
 
-### Configuration Options
+### 🔧 Configuration Options
 
 #### Styling
 
-Preprocessors
-- `REACT_APP_SASS` **Toggle SASS**
-- `REACT_APP_STYLUS` **Toggle Stylus**
+**Preprocessors**
 
-CSS Modules
-- `REACT_APP_CSS_MODULES` **Toggle CSS Modules**
-- `REACT_APP_SASS_MODULES` **Toggle SASS Modules**
-- `REACT_APP_STYLUS_MODULES` **Toggle Stylus Modules**
+| Feature | Parameter in .env | Type | At default |
+| ------- | ---- | ----------------- | ------- |
+| *SASS* | `REACT_APP_SASS` | Boolean | FALSE |
+| *Stylus* | `REACT_APP_STYLUS` | Boolean | FALSE |
 
-To use modules the file must be named in the following format: `[name].module.[preprocessor_name]`
+**CSS Modules**
 
-For example `MyCssModule.module.css`/`MySassModule.module.sass`/`MyScssModule.module.scss`/`MyStylusModule.module.styl` 
+| Feature | Parameter in .env | Need file format | Type | At default |
+| ------- | ---------------- | ----------------- | ---- | ---------- |
+| *CSS Modules* | `REACT_APP_CSS_MODULES` | `[name].module.css` | Boolean | FALSE |
+| *SASS Modules* | `REACT_APP_SASS_MODULES` | `[name].module.(sass/scss)` | Boolean | FALSE |
+| *Stylus Modules* | `REACT_APP_STYLUS_MODULES` | `[name].module.styl` |  Boolean | FALSE |
 
-Customize CSS Modules local ident name
-- `REACT_APP_DEVELOPMENT_CSS_MODULES_IDENT_NAME` **Set local ident name on development build**. At default = `[path]__[name]___[local]`
-- `REACT_APP_PRODUCTION_CSS_MODULES_IDENT_NAME` **Set local ident name on production build**. At default = `[local]-[sha512:hash:base32]`
+**Customizing CSS Modules local ident name**
+
+| Build | Type | Parameter in .env | At default |
+| ------- | ---- | ----------------- | ------- |
+| *Development* | `REACT_APP_DEVELOPMENT_CSS_MODULES_IDENT_NAME` | String  | [path]__[name]___[local] |
+| *Production* | `REACT_APP_PRODUCTION_CSS_MODULES_IDENT_NAME` | String | [local]-[sha512:hash:base32] |
 
 #### Experimental ES features
 
-- `REACT_APP_PROPOSAL_DECORATORS` **Toggle compile class and object decorators to ES5**
-- `REACT_APP_PROPOSAL_CLASS_PROPERTIES` **Toggle transform class properties**
+**Presets**
+
+| Feature | Type | Parameter in .env | At default |
+| ------- | ---- | ----------------- | ------- |
+| *Babel Preset Stage-0* | `REACT_APP_BABEL_PRESET_STAGE_0` | Boolean | FALSE |
+
+**Single plugins**
+
+| Feature | Type | Parameter in .env | At default |
+| ------- | ---- | ----------------- | ------- |
+| *Proposal Decorators* | `REACT_APP_PROPOSAL_DECORATORS` | Boolean |  FALSE |
+| *Proposal Class Properties* | `REACT_APP_PROPOSAL_CLASS_PROPERTIES` | Boolean | FALSE |
 
 #### GraphQL
 
-- `REACT_APP_GRAPHQL` **Toggle preprocess GraphQL queries**(.graphql files)
+| Feature | Type | Parameter in .env | At default |
+| ------- | ---- | ----------------- | ------- |
+| *GraphQL Loader* | `REACT_APP_GRAPHQL` | Boolean | FALSE |
 
 ### :mag_right: How does it work?
 

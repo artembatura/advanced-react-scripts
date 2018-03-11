@@ -182,7 +182,9 @@ module.exports = {
                   // @remove-on-eject-begin
                   babelrc: false,
                   // @remove-on-eject-end
-                  presets: [require.resolve('babel-preset-react-app-fresh')],
+                  presets: [
+                    require.resolve('babel-preset-react-app-fresh'),
+                  ].concat(advancedConfiguration.babelPresets),
                   plugins: advancedConfiguration.babelPlugins,
                   // This is a feature of `babel-loader` for webpack (not Babel itself).
                   // It enables caching results in ./node_modules/.cache/babel-loader/
