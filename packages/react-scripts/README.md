@@ -38,45 +38,45 @@ This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts
 #### Preprocessors
 
 | Feature | Parameter in .env | Type | At default |
-| ------- | ---- | ----------------- | ------- |
-| *SASS* | `REACT_APP_SASS` | Boolean | FALSE |
-| *Stylus* | `REACT_APP_STYLUS` | Boolean | FALSE |
+| ------- | ----------------- | ---- | ---------- |
+| *SASS* | `REACT_APP_SASS` | Boolean | `FALSE` |
+| *Stylus* | `REACT_APP_STYLUS` | Boolean | `FALSE` |
 
 #### CSS Modules
 
 | Feature | Parameter in .env | Need file format | Type | At default |
 | ------- | ---------------- | ----------------- | ---- | ---------- |
-| *CSS Modules* | `REACT_APP_CSS_MODULES` | `[name].module.css` | Boolean | FALSE |
-| *SASS Modules* | `REACT_APP_SASS_MODULES` | `[name].module.(sass/scss)` | Boolean | FALSE |
-| *Stylus Modules* | `REACT_APP_STYLUS_MODULES` | `[name].module.styl` |  Boolean | FALSE |
+| *CSS Modules* | `REACT_APP_CSS_MODULES` | `[name].module.css` | Boolean | `FALSE` |
+| *SASS Modules* | `REACT_APP_SASS_MODULES` | `[name].module.(sass/scss)` | Boolean | `FALSE` |
+| *Stylus Modules* | `REACT_APP_STYLUS_MODULES` | `[name].module.styl` |  Boolean | `FALSE` |
 
 #### CSS Modules local ident name
 
-| Build Type | Type | Parameter in .env | At default |
-| ---------- | ---- | ----------------- | ------- |
-| *Development* | `REACT_APP_DEVELOPMENT_CSS_MODULES_IDENT_NAME` | String  | [path]__[name]___[local] |
-| *Production* | `REACT_APP_PRODUCTION_CSS_MODULES_IDENT_NAME` | String | [local]-[sha512:hash:base32] |
+| Build Type | Parameter in .env | Type | At default |
+| ---------- | ----------------- | ---- | ---------- |
+| *Development* | `REACT_APP_DEVELOPMENT_CSS_MODULES_IDENT_NAME` | String  | `[path]__[name]___[local]` |
+| *Production* | `REACT_APP_PRODUCTION_CSS_MODULES_IDENT_NAME` | String | `[local]-[sha512:hash:base32]` |
 
 ### Experimental ES features
 
 #### Presets
 
-| Feature | Type | Parameter in .env | At default |
-| ------- | ---- | ----------------- | ------- |
-| *Babel Preset Stage-0* | `REACT_APP_BABEL_PRESET_STAGE_0` | Boolean | FALSE |
+| Feature | Parameter in .env | Type | At default | 
+| ------- | ----------------- | ---- | ---------- |
+| *Babel Preset Stage-0* | `REACT_APP_BABEL_PRESET_STAGE_0` | Boolean | `FALSE` |
 
 #### Single plugins
 
-| Feature | Type | Parameter in .env | At default |
+| Feature | Parameter in .env | Type | At default |
 | ------- | ---- | ----------------- | ------- |
-| *Proposal Decorators* | `REACT_APP_PROPOSAL_DECORATORS` | Boolean |  FALSE |
-| *Proposal Class Properties* | `REACT_APP_PROPOSAL_CLASS_PROPERTIES` | Boolean | FALSE |
+| *Proposal Decorators* | `REACT_APP_PROPOSAL_DECORATORS` | Boolean | `FALSE` |
+| *Proposal Class Properties* | `REACT_APP_PROPOSAL_CLASS_PROPERTIES` | Boolean | `FALSE` |
 
 #### GraphQL
 
-| Feature | Type | Parameter in .env | At default |
-| ------- | ---- | ----------------- | ------- |
-| *GraphQL Loader* | `REACT_APP_GRAPHQL_LOADER` | Boolean | FALSE |
+| Feature | Parameter in .env | Type | At default |
+| ------- | ----------------- | ---- | ---------- |
+| *GraphQL Loader* | `REACT_APP_GRAPHQL_LOADER` | Boolean | `FALSE` |
 
 ## :mag_right: How does it work?
 

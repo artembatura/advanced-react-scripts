@@ -1,4 +1,8 @@
-### 03.48-release.0 (March 11, 2018)
+### 03.48-release.1 (March 14, 2018)
+
+* Fix Readme
+
+### 03.48-release.0 (March 14, 2018)
 
 * Fix [#17](https://github.com/artemirq/advanced-react-scripts/issues/17)
 * Add Babel preset Stage 0 `@babel/preset-stage-0`
