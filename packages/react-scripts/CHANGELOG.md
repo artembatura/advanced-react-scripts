@@ -1,3 +1,9 @@
+### 03.48-release.0 (March 11, 2018)
+
+* Fix [#17](https://github.com/artemirq/advanced-react-scripts/issues/17)
+* Add Babel preset Stage 0 `@babel/preset-stage-0`
+* Change .env parameter `REACT_APP_GRAPHQL` to `REACT_APP_GRAPHQL_LOADER`
+
 #### 03.47-release.1 (March 10, 2018)
 
 Fix Readme and re-upload...

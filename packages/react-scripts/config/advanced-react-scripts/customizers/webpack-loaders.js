@@ -22,7 +22,7 @@ module.exports = {
   CSS_MODULES: {
     get: stylesLoader(undefined, /\.module\.css$/, undefined, true),
   },
-  GRAPHQL: {
+  GRAPHQL_LOADER: {
     get: () => {
       return {
         test: /\.(graphql)$/,
