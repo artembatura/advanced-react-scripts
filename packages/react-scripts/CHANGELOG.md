@@ -1,3 +1,9 @@
+### 03.49-beta.0 (April 1, 2018)
+
+* Update all dependencies
+* Add and configure svg-sprite-loader
+* Add customizable bundle attribute
+
 ### 03.48-release.1 (March 14, 2018)
 
 * Fix Readme

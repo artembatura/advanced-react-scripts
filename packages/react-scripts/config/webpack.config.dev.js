@@ -18,6 +18,7 @@ const eslintFormatter = require('react-dev-utils-fresh/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils-fresh/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 // #advanced-react-scripts
 const getAdvancedConfiguration = require('./advanced-react-scripts/config');
@@ -253,6 +254,9 @@ module.exports = {
       inject: true,
       template: paths.appHtml,
     }),
+    ...(process.env['REACT_APP_SVG_SPRITE_LOADER'] === 'true'
+      ? [new SpriteLoaderPlugin()]
+      : []),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
     // Makes some environment variables available to the JS code, for example:

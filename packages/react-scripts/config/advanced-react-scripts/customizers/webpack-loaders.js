@@ -23,11 +23,33 @@ module.exports = {
     get: stylesLoader(undefined, /\.module\.css$/, undefined, true),
   },
   GRAPHQL_LOADER: {
-    get: () => {
-      return {
-        test: /\.(graphql)$/,
-        loader: 'graphql-tag/loader',
-      };
-    },
+    get: () => ({
+      test: /\.(graphql)$/,
+      loader: 'graphql-tag/loader',
+    }),
+  },
+  SVG_SPRITE_LOADER: {
+    get: () => ({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: require.resolve('svg-sprite-loader'),
+          options: {
+            extract: true,
+            spriteFilename: `sprite-[hash:6].svg`,
+          },
+        },
+        {
+          loader: require.resolve('svgo-loader'),
+          options: {
+            plugins: [
+              { removeTitle: true },
+              { convertPathData: false },
+              { removeUselessStrokeAndFill: true },
+            ],
+          },
+        },
+      ],
+    }),
   },
 };

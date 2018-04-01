@@ -1,9 +1,7 @@
 # 🚀 *Advanced* react-scripts
 [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
-## ⚠ Disclaimer
-
-This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts` with fresh dependency packages and simple webpack modifications that can toggle extra features
+This repository is fork of `react-scripts` with fresh dependency packages and simple webpack modifications that can toggle extra features
 
 ## 💡 Features
 
@@ -12,14 +10,16 @@ This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts
 * [CSS Modules](https://github.com/gajus/react-css-modules#css-modules)
 * SASS Modules
 * Stylus Modules
-* Custom CSS Modules local ident name
 * [proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
 * [proposal-class-properties](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-class-properties)
 * [@babel/preset-stage-0](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0)
+* Customizable CSS Modules local ident name
+* Loading SVG files as sprite ([svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader))
+* Customizable attribute for bundle (`async`, `defer`, etc) ([script-ext-html-webpack-plugin](https://github.com/numical/script-ext-html-webpack-plugin))
 
 ## ❔ How to use it
 
-1. (optional) If you have existing project created by `create-react-app`, you can remove default `react-scripts`
+1. If you have existing project created by `create-react-app`, you can remove default `react-scripts`
 
    For it, run command:
 
@@ -72,15 +72,46 @@ This is **not** a fork of `create-react-app`. It's just a fork of `react-scripts
 | *Proposal Decorators* | `REACT_APP_PROPOSAL_DECORATORS` | Boolean | `FALSE` |
 | *Proposal Class Properties* | `REACT_APP_PROPOSAL_CLASS_PROPERTIES` | Boolean | `FALSE` |
 
+### Specific loaders
+
 #### GraphQL
 
 | Feature | Parameter in .env | Type | At default |
 | ------- | ----------------- | ---- | ---------- |
 | *GraphQL Loader* | `REACT_APP_GRAPHQL_LOADER` | Boolean | `FALSE` |
 
-## :mag_right: How does it work?
+See [example](https://github.com/apollographql/graphql-tag#webpack-preprocessing-with-graphql-tagloader) from official documentation
 
-The CRA team [added support](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env) for an `.env` file in the root of the generated CRA project and we can use it for customize webpack config
+#### SVG
+
+| Feature | Parameter in .env | Type | At default |
+| ------- | ----------------- | ---- | ---------- |
+| *SVG Sprite Loader* | `REACT_APP_SVG_SPRITE_LOADER` | Boolean | `FALSE` |
+
+See examples of use
+<details>
+   <summary>
+   
+   *SVG Sprite Loader*
+   
+   </summary>
+
+```js
+import twitterIcon from '../assets/twitter.svg';
+
+console.log(twitterIcon); // output 'sprite-[hash].svg#twitter-usage'
+
+<svg>
+  <use xlinkHref={twitterIcon}></use>
+</svg>
+```
+</details>
+
+### Bundle tweaks
+
+| Feature | Parameter in .env | Type | At default |
+| ------- | ----------------- | ---- | ---------- |
+| *Bundle attribute* | `REACT_APP_SCRIPT_DEFAULT_ATTRIBUTE` | String | `null` |
 
 ## Future
 
@@ -88,4 +119,4 @@ We follow updates of original `react-scripts` and changes in used packages
 
 **We need help us, community! Also everyone can take part in the development and suggest the idea, explained in Issue or make your own changes and send in Pull Request**
 
-### [Changelog](https://github.com/artemirq/advanced-react-scripts/tree/next/packages/react-scripts/CHANGELOG.md)
+## [Changelog](https://github.com/artemirq/advanced-react-scripts/tree/next/packages/react-scripts/CHANGELOG.md)

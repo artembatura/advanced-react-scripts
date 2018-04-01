@@ -8,11 +8,10 @@
 // @remove-on-eject-end
 'use strict';
 
-console.log(process.env.REACT_APP_PURGECSS);
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -20,6 +19,7 @@ const InterpolateHtmlPlugin = require('react-dev-utils-fresh/InterpolateHtmlPlug
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const eslintFormatter = require('react-dev-utils-fresh/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils-fresh/ModuleScopePlugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
@@ -259,6 +259,17 @@ module.exports = {
         minifyURLs: true,
       },
     }),
+    ...(process.env.hasOwnProperty('REACT_APP_SCRIPT_DEFAULT_ATTRIBUTE')
+      ? [
+          new ScriptExtHtmlWebpackPlugin({
+            defaultAttribute: process.env.REACT_APP_SCRIPT_DEFAULT_ATTRIBUTE,
+          }),
+        ]
+      : []),
+    ...(process.env.hasOwnProperty('REACT_APP_SVG_SPRITE_LOADER') &&
+    process.env.REACT_APP_SVG_SPRITE_LOADER === 'true'
+      ? [new SpriteLoaderPlugin()]
+      : []),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
