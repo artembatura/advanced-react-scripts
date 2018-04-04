@@ -16,6 +16,7 @@ This repository is fork of `react-scripts` with fresh dependency packages and si
 * Customizable CSS Modules local ident name
 * Loading SVG files as sprite ([svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader))
 * Customizable attribute for bundle (`async`, `defer`, etc) ([script-ext-html-webpack-plugin](https://github.com/numical/script-ext-html-webpack-plugin))
+* URL Font loader
 
 ## ❔ How to use it
 
@@ -56,6 +57,13 @@ This repository is fork of `react-scripts` with fresh dependency packages and si
 | ---------- | ----------------- | ---- | ---------- |
 | *Development* | `REACT_APP_DEVELOPMENT_CSS_MODULES_IDENT_NAME` | String  | `[path]__[name]___[local]` |
 | *Production* | `REACT_APP_PRODUCTION_CSS_MODULES_IDENT_NAME` | String | `[local]-[sha512:hash:base32]` |
+
+#### Fonts
+
+| Build Type | Parameter in .env | Type | At default |
+| ---------- | ----------------- | ---- | ---------- |
+| *URL Font loader* | `REACT_APP_FONT_URL_LOADER` | Boolean | `FALSE` |
+| *URL Font loader Limit* | `REACT_APP_FONT_URL_LOADER_LIMIT` | Integer | `50000` |
 
 ### Experimental ES features
 

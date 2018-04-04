@@ -1,14 +1,18 @@
-### 03.49-beta.0 (April 1, 2018)
+#### 03.50-beta.0 (April 4, 2018)
+
+* Add URL Font loader
+
+#### 03.49-beta.0 (April 1, 2018)
 
 * Update all dependencies
 * Add and configure svg-sprite-loader
 * Add customizable bundle attribute
 
-### 03.48-release.1 (March 14, 2018)
+#### 03.48-release.1 (March 14, 2018)
 
 * Fix Readme
 
-### 03.48-release.0 (March 14, 2018)
+#### 03.48-release.0 (March 14, 2018)
 
 * Fix [#17](https://github.com/artemirq/advanced-react-scripts/issues/17)
 * Add Babel preset Stage 0 `@babel/preset-stage-0`
