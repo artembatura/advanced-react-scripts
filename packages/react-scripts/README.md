@@ -133,6 +133,8 @@ console.log(twitterIcon); // output 'sprite-[hash].svg#twitter-usage'
 | ------- | ----------------- | ---- | ---------- |
 | *Bundle Attribute* | `REACT_APP_BUNDLE_ATTRIBUTE` | String | `null` |
 
+NOTE: works only on production build
+
 ## Future
 
 We follow updates of original `react-scripts` and changes in used packages

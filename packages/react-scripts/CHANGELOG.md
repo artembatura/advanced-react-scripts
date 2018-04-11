@@ -1,6 +1,9 @@
 #### 03.50-rc.0 (April 11, 2018)
 
 * Improve Readme; Add example Font Loader
+* Change ENV `REACT_APP_URL_FONT_LOADER` to `REACT_APP_FONT_LOADER`
+* Change ENV `REACT_APP_SCRIPT_DEFAULT_ATTRIBUTE` to `REACT_APP_BUNDLE_ATTRIBUTE`
+* Remove ENV `REACT_APP_FONT_URL_LOADER_LIMIT`
 * Now additional bundle attribute works only on files with `main` in name
 * Replace url-loader to file-loader in Font Loader (large base64 in css it's really bad idea)
 
