@@ -259,10 +259,10 @@ module.exports = {
         minifyURLs: true,
       },
     }),
-    ...(process.env.hasOwnProperty('REACT_APP_SCRIPT_DEFAULT_ATTRIBUTE')
+    ...(process.env.hasOwnProperty('REACT_APP_BUNDLE_ATTRIBUTE')
       ? [
           new ScriptExtHtmlWebpackPlugin({
-            defaultAttribute: process.env.REACT_APP_SCRIPT_DEFAULT_ATTRIBUTE,
+            [process.env.REACT_APP_BUNDLE_ATTRIBUTE]: 'main',
           }),
         ]
       : []),

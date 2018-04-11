@@ -1,3 +1,9 @@
+#### 03.50-rc.0 (April 11, 2018)
+
+* Improve Readme; Add example Font Loader
+* Now additional bundle attribute works only on files with `main` in name
+* Replace url-loader to file-loader in Font Loader (large base64 in css it's really bad idea)
+
 #### 03.50-beta.0 (April 4, 2018)
 
 * Add URL Font loader

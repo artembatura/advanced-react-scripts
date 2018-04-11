@@ -5,18 +5,23 @@ This repository is fork of `react-scripts` with fresh dependency packages and si
 
 ## 💡 Features
 
-* [SASS](https://sass-lang.com)
-* [Stylus](http://stylus-lang.com)
-* [CSS Modules](https://github.com/gajus/react-css-modules#css-modules)
-* SASS Modules
-* Stylus Modules
-* [proposal-decorators](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators)
-* [proposal-class-properties](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-class-properties)
-* [@babel/preset-stage-0](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0)
-* Customizable CSS Modules local ident name
-* Loading SVG files as sprite ([svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader))
-* Customizable attribute for bundle (`async`, `defer`, etc) ([script-ext-html-webpack-plugin](https://github.com/numical/script-ext-html-webpack-plugin))
-* URL Font loader
+* __[SASS](https://sass-lang.com) / [Stylus](http://stylus-lang.com)__
+
+* __[CSS Modules](https://github.com/gajus/react-css-modules#css-modules) / SASS Modules / Stylus Modules__
+
+* __Proposal Decorators__ ([i](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-decorators))
+
+* __Proposal Class Properties__ ([i](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-class-properties))
+
+* __Babel Preset Stage 0__ ([i](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0))
+
+* __Customizable CSS Modules Local Ident Name__
+
+* __SVG Loader__ (makes sprite) ([why](https://www.webdesignerdepot.com/2017/05/how-to-create-and-manage-svg-sprites)) ([i](https://github.com/kisenka/svg-sprite-loader))
+
+* __Additional bundle attribute__ (`async|defer|...`) ([i](https://github.com/numical/script-ext-html-webpack-plugin))
+
+* __Font Loader__ (`ttf|eot|woff|woff2`) ([i](https://github.com/webpack-contrib/file-loader))
 
 ## ❔ How to use it
 
@@ -62,8 +67,20 @@ This repository is fork of `react-scripts` with fresh dependency packages and si
 
 | Build Type | Parameter in .env | Type | At default |
 | ---------- | ----------------- | ---- | ---------- |
-| *URL Font loader* | `REACT_APP_FONT_URL_LOADER` | Boolean | `FALSE` |
-| *URL Font loader Limit* | `REACT_APP_FONT_URL_LOADER_LIMIT` | Integer | `50000` |
+| *Font Loader* | `REACT_APP_FONT_LOADER` | Boolean | `FALSE` |
+
+<details>
+   <summary>Example</summary>
+
+```css
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'),
+         local('Open-Sans'),
+         url('./../resources/fonts/OpenSans.woff2') format('woff2');
+}
+```
+</details>
 
 ### Experimental ES features
 
@@ -88,21 +105,16 @@ This repository is fork of `react-scripts` with fresh dependency packages and si
 | ------- | ----------------- | ---- | ---------- |
 | *GraphQL Loader* | `REACT_APP_GRAPHQL_LOADER` | Boolean | `FALSE` |
 
-See [example](https://github.com/apollographql/graphql-tag#webpack-preprocessing-with-graphql-tagloader) from official documentation
+[Official documentation](https://github.com/apollographql/graphql-tag#webpack-preprocessing-with-graphql-tagloader)
 
 #### SVG
 
 | Feature | Parameter in .env | Type | At default |
 | ------- | ----------------- | ---- | ---------- |
-| *SVG Sprite Loader* | `REACT_APP_SVG_SPRITE_LOADER` | Boolean | `FALSE` |
+| *SVG Loader (sprite)* | `REACT_APP_SVG_SPRITE_LOADER` | Boolean | `FALSE` |
 
-See examples of use
 <details>
-   <summary>
-   
-   *SVG Sprite Loader*
-   
-   </summary>
+   <summary>Example</summary>
 
 ```js
 import twitterIcon from '../assets/twitter.svg';
@@ -119,12 +131,12 @@ console.log(twitterIcon); // output 'sprite-[hash].svg#twitter-usage'
 
 | Feature | Parameter in .env | Type | At default |
 | ------- | ----------------- | ---- | ---------- |
-| *Bundle attribute* | `REACT_APP_SCRIPT_DEFAULT_ATTRIBUTE` | String | `null` |
+| *Bundle Attribute* | `REACT_APP_BUNDLE_ATTRIBUTE` | String | `null` |
 
 ## Future
 
 We follow updates of original `react-scripts` and changes in used packages
 
-**We need help us, community! Also everyone can take part in the development and suggest the idea, explained in Issue or make your own changes and send in Pull Request**
+**We need help us, community! Everyone can take part in the development and suggest the idea, explained in Issue or make your own changes and send in PR. We have no strict rules for your issues. Any wishes are taken into account =)**
 
-## [Changelog](https://github.com/artemirq/advanced-react-scripts/tree/next/packages/react-scripts/CHANGELOG.md)
+### [Changelog](https://github.com/artemirq/advanced-react-scripts/tree/next/packages/react-scripts/CHANGELOG.md)

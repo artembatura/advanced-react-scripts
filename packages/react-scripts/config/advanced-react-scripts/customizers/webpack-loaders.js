@@ -52,16 +52,12 @@ module.exports = {
       ],
     }),
   },
-  FONT_URL_LOADER: {
+  FONT_LOADER: {
     get: () => ({
       test: /\.(ttf|eot|woff|woff2)$/,
       use: {
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
-          // Limit at default 50k. Above that it emits separate files
-          limit: process.env.hasOwnProperty('REACT_APP_FONT_URL_LOADER_LIMIT')
-            ? parseInt(process.env.REACT_APP_FONT_URL_LOADER_LIMIT)
-            : 50000,
           name: 'static/fonts/[name].[ext]',
         },
       },
