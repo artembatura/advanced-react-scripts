@@ -4,7 +4,10 @@ const customizers = {
   webpackLoaders: require('./customizers/webpack-loaders'),
   babelPresets: {
     BABEL_PRESET_STAGE_0: {
-      get: () => require.resolve('@babel/preset-stage-0'),
+      get: () => [
+        require.resolve('@babel/preset-stage-0'),
+        { decoratorsLegacy: true },
+      ],
     },
   },
   babelPlugins: {
