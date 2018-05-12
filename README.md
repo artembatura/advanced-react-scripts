@@ -116,6 +116,7 @@ This repository is fork of `react-scripts` with fresh dependency packages and si
 <details>
    <summary>Example</summary>
 
+
 ```js
 import twitterIcon from '../assets/twitter.svg';
 
@@ -142,3 +143,7 @@ We follow updates of original `react-scripts` and changes in used packages
 **We need help us, community! Everyone can take part in the development and suggest the idea, explained in Issue or make your own changes and send in PR. We have no strict rules for your issues. Any wishes are taken into account =)**
 
 ### [Changelog](https://github.com/artemirq/advanced-react-scripts/tree/next/packages/react-scripts/CHANGELOG.md)
+
+### License
+
+Create React App is open source software [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE).

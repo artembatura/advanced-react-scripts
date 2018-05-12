@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-react-app-fresh",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "ESLint configuration used by Create React App",
   "repository": "facebook/create-react-app",
   "license": "MIT",
@@ -11,14 +11,14 @@
     "index.js"
   ],
   "peerDependencies": {
-    "babel-eslint": "8.2.2",
-    "eslint": "4.18.1",
-    "eslint-plugin-flowtype": "^2.46.1",
-    "eslint-plugin-import": "^2.9.0",
+    "babel-eslint": "8.2.3",
+    "eslint": "4.19.1",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.8.1"
   },
   "dependencies": {
-    "confusing-browser-globals-fresh": "^1.0.0"
+    "confusing-browser-globals-fresh": "^1.0.2"
   }
 }

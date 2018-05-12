@@ -88,7 +88,9 @@ module.exports = (loader, test, exclude, modules) => isDev => {
         {
           fallback: {
             loader: require.resolve('style-loader'),
-            options: { hmr: false },
+            options: {
+              hmr: false,
+            },
           },
           use: loaders,
         },
