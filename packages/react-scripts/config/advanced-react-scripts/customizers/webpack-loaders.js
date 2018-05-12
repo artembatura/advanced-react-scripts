@@ -34,18 +34,44 @@ module.exports = {
       use: [
         {
           loader: require.resolve('svg-sprite-loader'),
-          options: {
-            extract: true,
-            spriteFilename: `sprite.[hash:6].svg`,
-          },
         },
         {
           loader: require.resolve('svgo-loader'),
           options: {
             plugins: [
-              { removeTitle: true },
-              { convertPathData: false },
+              { removeDoctype: true },
+              { removeXMLProcInst: true },
+              { removeComments: true },
+              { removeMetadata: true },
+              { removeEditorsNSData: true },
+              { removeNonInheritableGroupAttrs: true },
+              { cleanupAttrs: true }, // yeah
+              { removeAttrs: { attrs: '(stroke|fill)' } },
               { removeUselessStrokeAndFill: true },
+              { minifyStyles: true },
+              { convertStyleToAttrs: true },
+              { cleanupIDs: true },
+              { removeUselessDefs: true },
+              { convertColors: true },
+              { removeUnknownsAndDefaults: true },
+              { removeViewBox: true },
+              { cleanupEnableBackground: true },
+              { removeHiddenElems: true },
+              { removeEmptyText: true },
+              { convertShapeToPath: true },
+              { moveElemsAttrsToGroup: true }, // yeah
+              { moveGroupAttrsToElems: true }, // yeah
+              { collapseGroups: true },
+              { removeRasterImages: true },
+              { convertTransform: true },
+              { removeEmptyAttrs: true }, // yeah
+              { removeEmptyContainers: true },
+              { removeUnusedNS: true },
+              { removeTitle: true },
+              { removeDesc: true },
+              { removeStyleElement: true },
+              { removeScriptElement: true },
+              { removeDimensions: true },
             ],
           },
         },
