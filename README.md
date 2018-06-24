@@ -1,6 +1,11 @@
 # 🚀 *Advanced* react-scripts
 [![npm version](https://img.shields.io/npm/v/advanced-react-scripts.svg)](https://www.npmjs.com/package/advanced-react-scripts)
 
+### This repository is not maintain more. Use at your own risk
+#### Now i start work on tool for flexible configuring webpack (not only, maybe)
+
+
+
 This repository is fork of `react-scripts` with fresh dependency packages and simple webpack modifications that can toggle extra features
 
 ## 💡 Features
