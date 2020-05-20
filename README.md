@@ -4,9 +4,6 @@
 ---
 
 ### This repository is not maintain more. Use at your own risk
-#### Now i start work on tool for flexible configuring webpack (not only, maybe)
-### 🎉 Update. The project, which I announced previously — now on Github. It's [`Zero Scripts`](https://github.com/artemirq/zero-scripts)
-#### And future drop-replacement for `react-scripts` it's [`@zero-scripts/preset.webpack-spa`](https://github.com/artemirq/zero-scripts/tree/master/packages/preset.webpack-spa) with extensions to support necessary features for your project
 ---
 
 This repository is fork of `react-scripts` with fresh dependency packages and simple webpack modifications that can toggle extra features
